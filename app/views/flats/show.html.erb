@@ -1,0 +1,49 @@
+<div class="flat-banner" style="background-image: url('<%= @flat.picture_url %>')"></div>
+
+<div class="container flat-container">
+  <div class="row">
+    <div class="col-8">
+      <section id="flat-main" class="flat-section">
+        <h1><%= @flat.name %></h1>
+        <p><%= @flat.address %></p>
+      </section>
+      <section id="flat-description" class="flat-section">
+        <h3>A bit more about this flat...</h3>
+        <p><%= @flat.description %></p>
+        <div id='flat-map'></div>
+      </section>
+    </div>
+    <div class="col-4">
+      <section id="flat-book" class="flat-section">
+        <h4>Book this place!</h4>
+      </section>
+      <section id="flat-details" class="flat-section">
+        <h3>Details</h3>
+        <span class="flat-data">
+          <i class="fa-solid fa-people-roof"></i>
+          <%= @flat.number_of_guests %>
+        </span>
+        <span class="flat-data" class="flat-section">
+          <i class="fa-solid fa-euro-sign"></i>
+          <%= @flat.price_per_night %>
+        </span>
+      </section>
+      <section id="flat-share" class="flat-section">
+        Share
+      </section>
+    </div>
+  </div>
+</div>
+
+<script>
+  mapboxgl.accessToken = "<%= @mapbox_access_token %>";
+    const map = new mapboxgl.Map({
+      container: 'flat-map', // container ID
+      style: 'mapbox://styles/mapbox/streets-v12', // style URL
+      center: [<%= @flat.longitude %>, <%= @flat.latitude %>], // starting position [lng, lat]
+      zoom: 9, // starting zoom
+    });
+    const marker = new mapboxgl.Marker()
+      .setLngLat([<%= @flat.longitude %>, <%= @flat.latitude %>])
+      .addTo(map);
+</script>

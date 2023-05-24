@@ -13,3 +13,46 @@
  *= require_tree .
  *= require_self
  */
+
+ .card-footer {
+  padding: 0;
+ }
+
+.flat-action,
+.flat-data {
+  padding: 0.5em;
+  flex-grow: 1;
+  text-align: center;
+  text-decoration: none;
+}
+
+.flat-action:first-child,
+.flat-data:first-child {
+  border-right: 1px solid rgba(0,0,0,.125);
+}
+
+.flat-action:last-child {
+  border-left: 1px solid rgba(0,0,0,.125);
+}
+
+.flat-container {
+  margin-top: -50px;
+}
+
+.flat-banner {
+  height: 350px;
+  background-size: cover;
+}
+
+.flat-section {
+  border-radius: 4px;
+  background-color: #F8F9FA;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.055);
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+#flat-map {
+  height: 300px;
+  width: 100%;
+}

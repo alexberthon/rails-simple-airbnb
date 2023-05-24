@@ -1,0 +1,25 @@
+<%= simple_form_for flat do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <div class="row">
+    <div class="col-6">
+      <%= f.input :address %>
+    </div>
+    <div class="col-3">
+      <%= f.input :latitude %>
+    </div>
+    <div class="col-3">
+      <%= f.input :longitude %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <%= f.input :price_per_night %>
+    </div>
+    <div class="col">
+      <%= f.input :number_of_guests %>
+    </div>
+  </div>
+  <%= f.input :picture_url %>
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>
